@@ -9,6 +9,7 @@ import com.student.entity.Student;
 
 public interface StudentRepo extends MongoRepository<Student, String>{
 	
+	//Inbuit method to display all the student sorting by name
 	List<Student> findAllByOrderByNameAsc();
 
 }
