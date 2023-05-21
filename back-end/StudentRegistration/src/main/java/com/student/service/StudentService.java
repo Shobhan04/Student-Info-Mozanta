@@ -20,12 +20,7 @@ public class StudentService {
 	{
 		return this.studentRepo.save(student);
 	}
-	
-//	public List<Student> displayStudent()
-//	{
-//	return	this.studentRepo.findAll();
-//	}
-	
+		
 	public List<Student> displayByName()
 	{
 		return this.studentRepo.findAllByOrderByNameAsc();
