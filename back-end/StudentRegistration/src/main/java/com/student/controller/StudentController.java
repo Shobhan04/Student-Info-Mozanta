@@ -30,7 +30,7 @@ public class StudentController {
 	private IdGenerator generator;
 	
 	
-	//save the data in database
+	//save the student-info in database
 	@PostMapping("/student")
 	public Student saveStudent(@RequestBody Student student)
 	{
@@ -38,19 +38,12 @@ public class StudentController {
 		return this.studentService.saveStudent(student);
 	}
 	
-	//display data by name
+	//display all the student by name
 	@GetMapping("/student")
 	public List<Student> displayAll(){
 		//return this.studentService.displayStudent();
 		List<Student> list=this.studentService.displayByName();
-		//Collections.sort(list,new SortByName());
-		
-//		for (Student student : list) {
-//			System.out.println(student.getName());
-//			
-//		}
-		
-		return list;
+	return list;
 	}
 	
 
