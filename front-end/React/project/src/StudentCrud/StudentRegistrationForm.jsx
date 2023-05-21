@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const StudentRegistrationForm = () => {
 
+    
     const [name, setName] = useState('');
   const [dob, setDob] = useState('');
   const [classs, setClasss]= useState('');
@@ -26,19 +27,13 @@ const StudentRegistrationForm = () => {
     //Sent the data to the data base using rest api
      axios.post('http://localhost:8080/api/student', data)
      .then((response)=>{
+         //After save the student info in database i render the page to display
          window.location.assign("/display")
           console.log(response);
      })
      .catch((error)=>{
       console.log(error);
      })
-  
-      // alert(`Admission Number: ${response.data.admissionNumber}`);
-      // setName('');
-      // setDob('');
-      // setClasss('');
-      // setDivision('');
-      // setGender('');
   };
 
 
@@ -52,7 +47,7 @@ const StudentRegistrationForm = () => {
 
     <h3 className='text-center mt-1'>Student Register</h3>
 
-
+{/* student info form */}
 <form>
    
 
