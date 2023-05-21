@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 
 const DisplayStudent = () => {
 
-//STORE ALL THE DATA data Array
+//Create an empty array to store all the student after fetching from database
   let [data,setData]=useState([])
 
-  //To Fetch The Data
+  //To Fetch The Data  from data base using axios.GET method
   useEffect(()=>{
     axios.get("http://localhost:8080/api/student")
     .then((response)=>{
-      setData(response.data)
+      setData(response.data). //set all the student in data array
     })
     .catch((error)=>{
       console.log(error);
@@ -39,6 +39,7 @@ const DisplayStudent = () => {
 
     </tr>
   </thead>
+      {/* Here i used map function to display all the student present in database */}
   {data.map((x)=>{
     return(
       <tbody>
