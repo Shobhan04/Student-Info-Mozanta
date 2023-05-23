@@ -10,7 +10,7 @@ const DisplayStudent = () => {
   useEffect(()=>{
     axios.get("http://localhost:8080/api/student")
     .then((response)=>{
-      setData(response.data). //set all the student in data array
+      setData(response.data) //set all the student in data array
     })
     .catch((error)=>{
       console.log(error);
